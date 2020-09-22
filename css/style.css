@@ -1,0 +1,44 @@
+
+img{
+    width: 90%;
+    max-height: 90%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    display: block;
+
+}
+h1{
+    color: white;
+}
+
+.heros{
+    margin-left: 5px;
+    margin-bottom: 5px;
+    display: inline-grid;
+}
+.card {
+    border-radius: 5px;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+  
+  }
+.card:hover {
+    -webkit-box-shadow: 0px 1px 30px 0px rgba(53, 50, 50, 0.69);
+   -moz-box-shadow:    0px 1px 30px 0px rgba(53, 50, 50, 0.69);
+   box-shadow:         0px 1px 30px 0px rgba(53, 50, 50, 0.69);
+   }
+.inf{
+    margin-left: 10px;
+}
+.stats{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.head{
+    margin-bottom: 50px;
+    background-color: #5cc7b2 !important;
+}
