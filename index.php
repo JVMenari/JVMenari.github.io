@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -41,6 +42,21 @@
 
 
                     </div>
+                    <button class="btn-save">Inserir heroi no banco
+                        <?php
+                        $connection = pg_connect("port=5432 dbname=heros user= password=");
+
+                        if ($connection) {
+                            $sql = "INSERT INTO herois (id, nome, img_url, intelligence, strength, speed, durabi, pwr, combat) 
+               VALUES (1, 'Fábio')";
+                            pg_query($conn, $sql);
+                            echo "++ Heroi inserido com sucesso!!";
+                            pg_close($conn);
+                        } else {
+                            echo "++ Falha de conexao!!";
+                        }
+                        ?>
+                    </button>
                 </div>
             <?php } ?>
 
