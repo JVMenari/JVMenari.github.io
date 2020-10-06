@@ -1,3 +1,4 @@
+,
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,10 +46,18 @@
                     <button class="btn-save">Inserir heroi no banco
                         <?php
                         $connection = pg_connect("port=5432 dbname=heros user= password=");
-
+                        //verificar como passar parametros para postgre utilizando php
                         if ($connection) {
-                            $sql = "INSERT INTO herois (id, nome, img_url, intelligence, strength, speed, durabi, pwr, combat) 
-               VALUES (1, 'Fábio')";
+                            $sql = "INSERT INTO herois (nome, img_url, intelligence, strength, speed, durabi, pwr, combat) 
+                            VALUES ($heros->name, 
+                                    $heros->image->url, 
+                                    $heros->powerstats->intelligence, 
+                                    $heros->powerstats->strength,
+                                    $heros->powerstats->speed,
+                                    $heros->powerstats->durability,
+                                    $heros->powerstats->power,
+                                    $heros->powerstats->combat)";
+                                    
                             pg_query($conn, $sql);
                             echo "++ Heroi inserido com sucesso!!";
                             pg_close($conn);
